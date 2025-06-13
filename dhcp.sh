@@ -20,12 +20,12 @@ vi /etc/dnsmasq.conf
             #nella conf
             read-ethers
             #nel file /etc/ethers metto le associazioni mac-ip dei client
-            <mac> <ip> 
+                <mac> <ip> 
             #nel file /etc/hosts metto le associazioni ip-hostname-domain del client o anche di te stesso
-            <ip> <hostname> <hostname>.<domain>
-            #esempio
-            192.168.1.254 server server.reti.org
-            192.168.1.3 client3 client3.reti.org
+                <ip> <hostname> <hostname>.<domain>
+                #esempio
+                192.168.1.254 server server.reti.org
+                192.168.1.3 client3 client3.reti.org
 
 
         #opzione2
