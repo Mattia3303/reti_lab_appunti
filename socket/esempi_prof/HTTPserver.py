@@ -51,7 +51,7 @@ def get_mime(fname):
             break
     return mime
 
-def send_200(conn, fname):
+def send_200(conn:socket, fname):
     header = 'HTTP/1.0 200 OK\r\n' + \
         'Connection: close\r\n' + \
         'Content-Length: %d\r\n' % os.path.getsize(fname) + \
