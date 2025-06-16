@@ -3,19 +3,23 @@ sysctl -w net.ipv4.ip_forward=1
     #per rendere permanente
     echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 
+#ATTIVA L'IP FORWARDING !!!!!!!!
+
 #Aggiungere una route statica
 ip route add <dest> via <gateway> [dev <iface>]
     #per rimuovere
     ip route del ...
 
 #Aggiungere un default gateway
-ip route add default via <gateway> [dev <iface>]
+ip route add default [via <gateway>] [dev <iface>]
 
+#ATTIVA L'IP FORWARDING !!!!!!!!
 #Configurazioni permanenti
     #default gateway
     address ...
     gateway <ip>
-    #route statica
+#ATTIVA L'IP FORWARDING !!!!!!!!
+    #route statica 
     address ...
     post-up ip route add <dest> via <gateway> [dev <iface>]
 #Mostrare le route

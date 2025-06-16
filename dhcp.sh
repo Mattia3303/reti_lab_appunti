@@ -2,7 +2,7 @@
 auto eth0
 iface eth0 inet dhcp
     #For fixed address 
-    hwaddress  ether  <mac>
+    hwaddress  ether  <mac> #02:04:06:... su marionnet
 
 
 
@@ -39,12 +39,18 @@ vi /etc/dnsmasq.conf
     #Interfaccia su cui ascoltare
     interface=<iface>
     #Dominio di ricerca (non so a cosa serva)
-    domain=<domain>
+    domain=<domain> #metti reti.org se non specificato altros
+    
 
     #Settaggio del default gateway ai client
     dhcp-option=3,<gateway-ip>
     #Settaggio del DNS ai client
     dhcp-option=6,<dns-ip>
+
+#Server dns masq activation
+systemctl enable dnsmasq
+
+service dsnmasq start
 
 
 
