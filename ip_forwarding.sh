@@ -18,7 +18,9 @@ ip route add default [via <gateway>] [dev <iface>]
     #default gateway
     address ...
     gateway <ip>
+#    -------------------------------
 #ATTIVA L'IP FORWARDING !!!!!!!!
+#    -------------------------------
     #route statica 
     address ...
     post-up ip route add <dest> via <gateway> [dev <iface>]
