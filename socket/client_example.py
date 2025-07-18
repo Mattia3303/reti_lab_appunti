@@ -4,7 +4,7 @@ import os
 import sys
 
 HOST = '127.0.0.1'  
-PORT = 1025 
+PORT = [cmp] 
 
 
 
@@ -24,6 +24,14 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     #Send data
     msg = [cmp]
     s.sendall(msg.encode('utf-8'))
+
+    #Receive response
+    response:str = ''
+    while True:
+        response += s.recv(1024).decode('utf-8')
+
+        if '\r\n' in response:
+            break
 
 
     
