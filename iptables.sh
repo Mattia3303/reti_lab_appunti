@@ -30,6 +30,10 @@ iptables -t {filter, nat} -L -v -n
             NEW #Nuova connessione
             ESTABLISHED #Connessione già stabilita
             RELATED #Connessione correlata
+            #ATTENZIONE
+            udp è connectionless, quindi non va usato -m state
+
+
     #Rimovere regole (-D)
     iptables -D ....
 
@@ -51,4 +55,5 @@ iptables -t {filter, nat} -L -v -n
 
     #Dynamic NAT
     #AD ES se host 192.168.1.1 gestisce un server web che ascolta su porta 80
+    #ATTENZIONE: la regola permette solo di inoltrare il traffico destinato a 155.185.54.185:80 a 192.168.1.1:80
     iptables -t nat -A PREROUTING -p tcp -d 155.185.54.185 --dport 80 -j DNAT --to-destination 192.168.1.1
