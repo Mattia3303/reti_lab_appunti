@@ -47,10 +47,16 @@ vi /etc/dnsmasq.conf
     #Settaggio del DNS ai client
     dhcp-option=6,<dns-ip>
 
+
+#TEST SINTASSI
+dnsmasq --test
+
 #Server dns masq activation
 systemctl enable dnsmasq
 
 service dsnmasq start
+
+
 
 
 

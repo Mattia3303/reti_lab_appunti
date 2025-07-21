@@ -1,6 +1,9 @@
 #GUARDARE LE TABELLE
 iptables -t {filter, nat} -L -v -n 
 
+#RICORDA DI USARE OPZIONE -v IN NETCAT PER VERIFICARE CHE SIA CONNESSO
+#ATTENZIONE: PACCHETTO IN ENTRATA NEL GW SUBISCE PRIMA IL NAT (in pratica viene seguito
+# il normale ordine dettato dagli hook)
 
 #FILTRAGGIO PACCHETTI
     #CHAINS
@@ -51,7 +54,7 @@ iptables -t {filter, nat} -L -v -n
         #Agli host privati viene assegnata una porta tra quelle disponibili
     #Masquerading
     #Se si vuole usare l'indirizzo IP della NIC di uscita
-    iptables -t nat -A POSTROUTING -o <iface> -j MASQUERADE
+    iptables -t nat -A POSTROUTING -o <iface> -j MASQUERADE 
 
     #Dynamic NAT
     #AD ES se host 192.168.1.1 gestisce un server web che ascolta su porta 80
